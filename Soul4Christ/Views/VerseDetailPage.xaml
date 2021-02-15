@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Soul4Christ.Views.VerseDetailPage"
+             Visual="Material"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" Text="Share" Command="{Binding ShareVerseCommand}" />
+        <ToolbarItem Order="Secondary" Text="Read" Command="{Binding ReadVerseCommand}"/>
+    </ContentPage.ToolbarItems>
+    <Grid BackgroundColor="White">
+        <BoxView Opacity="0.7" BackgroundColor="#0f0f0f6b" Margin="20" CornerRadius="10" />
+        <StackLayout Padding="30" Spacing="10">
+            <!--<StackLayout Orientation="Horizontal" Padding="15">
+                <Label Text="{Binding Date, StringFormat='{0:dd MMM yyyy}'}" 
+                       FontAttributes="Italic" 
+                       FontSize="16" 
+                       TextColor="White"
+                       HorizontalOptions="Start"/>
+            </StackLayout>-->
+            <Label Text="{Binding Content}" 
+                   TextColor="Black" 
+                   FontSize="Large" 
+                   HorizontalTextAlignment="Center" 
+                   Padding="20,15,20,10" />
+            <Label Text="{Binding Book}" 
+                   TextColor="Black" 
+                   FontSize="Medium" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Padding="20,10"
+                   FontAttributes="Italic"
+                   TextTransform="Uppercase"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

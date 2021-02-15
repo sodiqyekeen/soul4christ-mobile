@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:v="clr-namespace:Soul4Christ.Views"
+             x:Class="Soul4Christ.AppShell">
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid>
+                <Label Text="YOURSOUL4CHRIST" TextColor="White" FontSize="Large"
+                       HorizontalOptions="Center"
+                       Margin="20,10,20,10"
+                       VerticalOptions="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <FlyoutItem Title="Dashboard">
+        
+        <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate v:Dashboard}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Verses">
+        <ShellContent Route="VersesPage" ContentTemplate="{DataTemplate v:VersesPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="About">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate v:AboutPage}"/>
+    </FlyoutItem>
+</Shell>

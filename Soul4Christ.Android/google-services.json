@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "195913622989",
+    "firebase_url": "https://soul4christ.firebaseio.com",
+    "project_id": "soul4christ",
+    "storage_bucket": "soul4christ.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195913622989:android:6d07b2cf2b9a1e043d9084",
+        "android_client_info": {
+          "package_name": "com.soulsforchrist.soulapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195913622989-8gb341j8t74q7k5jhncavqao4rs397nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVzleqyTzv9ahJA0q8FFmNd5Kv7aWfDF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195913622989-8gb341j8t74q7k5jhncavqao4rs397nh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

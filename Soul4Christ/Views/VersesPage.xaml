@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Soul4Christ.Views.VersesPage"
+             Title="{Binding Title}"
+             xmlns:vm="clr-namespace:Soul4Christ.ViewModels"
+             xmlns:model="clr-namespace:Soul4Christ.Models"
+             Visual="Default">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"  Command="{Binding AddVerseCommand}" />
+    </ContentPage.ToolbarItems>
+   
+    <RefreshView x:DataType="vm:VersesViewModel" Command="{Binding LoadVerseCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Padding="0,15">
+        <CollectionView x:Name="VersesListView" ItemsSource="{Binding Verses}" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10,0">
+                        <Frame Padding="10" Margin="10" BackgroundColor="#0f0f0f6b">
+                            <StackLayout x:DataType="model:Verse" Spacing="10" >
+                                <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" 
+                                       FontSize="Small"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       Margin="0,0,0,10"/>
+                                <Label Text="{Binding Content}" 
+                                       FontSize="Body"
+                                       
+                                        TextColor="Black"/>
+                                <Label Text="{Binding Book}" FontSize="Body"
+                                       FontAttributes="Bold"
+                                        TextColor="Black"
+                                       HorizontalOptions="End"/>
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        NumberOfTapsRequired="1"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VersesViewModel}}, Path=VerseTappedCommand}"
+                                        CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>
